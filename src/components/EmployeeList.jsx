@@ -18,7 +18,7 @@ export default function EmployeeList() {
   useEffect(() => {
     const fetchEmployeeList = async () => {
       const response = await fetch(
-        `${import.meta.env.VITE_FIREBASE_BACKEND_URL}/employeelist`,
+        "https://dealsdray-admin-backend.onrender.com/employeelist",
         {
           method: "GET",
           headers: {
@@ -126,7 +126,7 @@ export default function EmployeeList() {
 
   const handleDelete = async (employeeId) => {
     try {
-      const url = `${import.meta.env.VITE_FIREBASE_BACKEND_URL}/deleteemployee`;
+      const url = "https://dealsdray-admin-backend.onrender.com/deleteemployee";
       const response = await fetch(url, {
         method: "DELETE",
         headers: {

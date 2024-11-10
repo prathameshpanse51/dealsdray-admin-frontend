@@ -29,7 +29,7 @@ export default function AdminLogin() {
     }
 
     try {
-      const url = `${import.meta.env.VITE_FIREBASE_BACKEND_URL}`;
+      const url = "https://dealsdray-admin-backend.onrender.com/";
       const response = await fetch(url, {
         method: "POST",
         headers: {

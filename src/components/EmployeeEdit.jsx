@@ -83,7 +83,7 @@ export default function EmployeeEdit() {
   useEffect(() => {
     const fetchEmployee = async () => {
       const response = await fetch(
-        `${import.meta.env.VITE_FIREBASE_BACKEND_URL}/${id}/edit`
+        `https://dealsdray-admin-backend.onrender.com/${id}/edit`
       );
       const result = await response.json();
       setFormData({
@@ -108,7 +108,7 @@ export default function EmployeeEdit() {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_FIREBASE_BACKEND_URL}/employeeedit/${id}`,
+        `https://dealsdray-admin-backend.onrender.com/employeeedit/${id}`,
         {
           method: "PUT",
           headers: {

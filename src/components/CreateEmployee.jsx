@@ -83,7 +83,7 @@ export default function CreateEmployee() {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_FIREBASE_BACKEND_URL}/createemployee`,
+        "https://dealsdray-admin-backend.onrender.com/createemployee",
         {
           method: "POST",
           headers: {
