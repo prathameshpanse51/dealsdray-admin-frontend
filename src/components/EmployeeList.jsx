@@ -33,6 +33,7 @@ export default function EmployeeList() {
     fetchEmployeeList();
   }, []);
 
+  // useMemo
   const data = useMemo(() => employeeList, [employeeList]);
 
   /** @type import('@tanstack/react-table').ColumnDef<any> **/
