@@ -2,14 +2,14 @@ import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASEP_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
-  crossOriginIsolated: import.meta.env.VITE_FIREBASE_CROSS_ORIGIN_ISOLATED,
+  apiKey: "AIzaSyCKSjd0lX3cv47F72M2oNhoUAG-saecdO4",
+  authDomain: "evento-386813.firebaseapp.com",
+  projectId: "evento-386813",
+  storageBucket: "evento-386813.appspot.com",
+  messagingSenderId: "17807023590",
+  appId: "1:17807023590:web:7bccd5f65869c34e980a27",
+  measurementId: "G-HGHZQH5H6Q",
+  crossOriginIsolated: false,
 };
 
 const app = initializeApp(firebaseConfig);
