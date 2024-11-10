@@ -1,4 +1,4 @@
-# ScizersTechnologiesLLP
+# Dealsdray
 
  ## Installation
 1. Clone the repository:
@@ -15,4 +15,4 @@
     ```
 
  ## Demo Link
- [https://pkp-zoroz-ecommerce.netlify.app/](https://pkp-dealsdray.netlify.app/)
+ https://pkp-dealsdray.netlify.app/
