@@ -31,7 +31,7 @@ export default function EmployeeList() {
       setIsLoading(false);
     };
     fetchEmployeeList();
-  }, []);
+  }, [employeeList]);
 
   // useMemo
   const data = useMemo(() => employeeList, [employeeList]);
