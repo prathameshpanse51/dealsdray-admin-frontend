@@ -108,7 +108,7 @@ export default function EmployeeEdit() {
 
     try {
       const response = await fetch(
-        `import.meta.env.VITE_FIREBASE_BACKEND_URL/employeeedit/${id}`,
+        `${import.meta.env.VITE_FIREBASE_BACKEND_URL}/employeeedit/${id}`,
         {
           method: "PUT",
           headers: {
