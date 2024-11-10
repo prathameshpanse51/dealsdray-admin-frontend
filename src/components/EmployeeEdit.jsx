@@ -82,7 +82,9 @@ export default function EmployeeEdit() {
 
   useEffect(() => {
     const fetchEmployee = async () => {
-      const response = await fetch(`http://localhost:3000/${id}/edit`);
+      const response = await fetch(
+        `${import.meta.env.VITE_FIREBASE_BACKEND_URL}/${id}/edit`
+      );
       const result = await response.json();
       setFormData({
         name: result.f_Name,
@@ -105,13 +107,16 @@ export default function EmployeeEdit() {
     errorElement.classList.add("hidden");
 
     try {
-      const response = await fetch(`http://localhost:3000/employeeedit/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        `import.meta.env.VITE_FIREBASE_BACKEND_URL/employeeedit/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       const result = await response.json();
 
       if (response.ok) {

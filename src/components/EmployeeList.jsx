@@ -17,12 +17,15 @@ export default function EmployeeList() {
 
   useEffect(() => {
     const fetchEmployeeList = async () => {
-      const response = await fetch("http://localhost:3000/employeelist", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_FIREBASE_BACKEND_URL}/employeelist`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const result = await response.json();
       setEmployeeList(result);
       setIsLoading(false);
@@ -123,7 +126,7 @@ export default function EmployeeList() {
 
   const handleDelete = async (employeeId) => {
     try {
-      const url = "http://localhost:3000/deleteemployee";
+      const url = `${import.meta.env.VITE_FIREBASE_BACKEND_URL}/deleteemployee`;
       const response = await fetch(url, {
         method: "DELETE",
         headers: {

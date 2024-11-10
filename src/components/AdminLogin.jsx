@@ -29,7 +29,7 @@ export default function AdminLogin() {
     }
 
     try {
-      const url = "http://localhost:3000/";
+      const url = `${import.meta.env.VITE_FIREBASE_BACKEND_URL}/`;
       const response = await fetch(url, {
         method: "POST",
         headers: {
