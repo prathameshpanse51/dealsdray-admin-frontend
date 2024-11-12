@@ -15,16 +15,20 @@ export default function AdminLogin() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const incorrectMessage = document.getElementById("incorrect");
+    incorrectMessage.style.display = "none";
+    incorrectMessage.innerHTML = "";
+
     if (!formData.f_userName || !formData.f_Pwd) {
-      document.getElementById("incorrect").innerHTML = "Fill in the details!";
-      document.getElementById("incorrect").style.display = "block";
+      incorrectMessage.innerHTML = "Fill in the details!";
+      incorrectMessage.style.display = "block";
       return;
     }
 
     if (formData.f_Pwd.length < 6) {
-      document.getElementById("incorrect").innerHTML =
+      incorrectMessage.innerHTML =
         "Password must be at least 6 characters long!";
-      document.getElementById("incorrect").style.display = "block";
+      incorrectMessage.style.display = "block";
       return;
     }
 
@@ -40,23 +44,21 @@ export default function AdminLogin() {
 
       if (response.status === 200) {
         const result = await response.json();
-        document.getElementById("incorrect").style.display = "none";
         sessionStorage.setItem("admin", "success");
         sessionStorage.setItem("adminName", formData.f_userName);
         window.location.pathname = "/admindashboard";
       } else if (response.status === 401) {
         const errorData = await response.json();
-        document.getElementById("incorrect").innerHTML =
+        incorrectMessage.innerHTML =
           errorData.message || "Incorrect username or password";
-        document.getElementById("incorrect").style.display = "block";
+        incorrectMessage.style.display = "block";
       } else {
         throw new Error("Unexpected error occurred");
       }
     } catch (error) {
       console.error("Error fetching data:", error);
-      document.getElementById("incorrect").innerHTML =
-        "Server error. Try again later.";
-      document.getElementById("incorrect").style.display = "block";
+      incorrectMessage.innerHTML = "Server error. Try again later.";
+      incorrectMessage.style.display = "block";
     }
   };
 
