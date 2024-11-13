@@ -65,13 +65,13 @@ export default function EmployeeList() {
       header: "Email",
       accessorKey: "f_Email",
       Cell: ({ cell }) => (
-        <a
-          href={`mailto:${cell.getValue()}`}
+        <Link
+          to={`mailto:${cell.getValue()}`}
           target="_blank"
           className="underline text-blue-600"
         >
           {cell.getValue()}
-        </a>
+        </Link>
       ),
       size: 5,
     },
@@ -245,14 +245,14 @@ export default function EmployeeList() {
           Total count :{" "}
           <span className="font-semibold">{employeeList.length}</span>
         </p>
-        <a
-          href="/createemployee"
+        <Link
+          to="/createemployee"
           data-modal-target="popup-modal"
           data-modal-toggle="popup-modal"
           className=" px-4 py-2 md:text-lg font-semibold text-white transition-colors duration-300 bg-blue-500 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-blue-200 focus:ring-4"
         >
           Create Employee
-        </a>
+        </Link>
       </div>
       <main className="w-full relative flex justify-center">
         {isLoading ? (

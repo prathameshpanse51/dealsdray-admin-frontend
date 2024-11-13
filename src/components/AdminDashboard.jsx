@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function AdminDashboard() {
   if (sessionStorage.getItem("admin") !== "success") {
@@ -13,8 +14,8 @@ export default function AdminDashboard() {
         </h1>
 
         <div className="flex flex-col gap-10 md:flex-row justify-center md:mt-20 mb-10">
-          <a
-            href="/createemployee"
+          <Link
+            to="/createemployee"
             className="card hover:transition hover:-translate-y-4 hover:duration-500"
           >
             <div>
@@ -34,10 +35,10 @@ export default function AdminDashboard() {
               </p>
               <div className="card__content"></div>
             </div>
-          </a>
+          </Link>
 
-          <a
-            href="/employeelist"
+          <Link
+            to="/employeelist"
             className="card hover:transition hover:-translate-y-4 hover:duration-500"
           >
             <div>
@@ -57,7 +58,7 @@ export default function AdminDashboard() {
               </p>
               <div className="card__content"></div>
             </div>
-          </a>
+          </Link>
         </div>
       </main>
     </>

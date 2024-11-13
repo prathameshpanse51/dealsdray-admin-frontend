@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { storage } from "./FirebaseConfig";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
@@ -196,12 +196,12 @@ export default function EmployeeEdit() {
       <div className="flex items-center min-h-screen p-4 bg-gray-100 justify-center">
         <div className="overflow-hidden w-[100vh] bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-sm">
           <p className="text-end mt-2">
-            <a
-              href="/employeelist"
+            <Link
+              to="/employeelist"
               className="mr-4 text-[#EE4B2B] font-semibold text-base"
             >
               Back
-            </a>
+            </Link>
           </p>
           <h1 className="text-2xl md:text-3xl font-semibold text-center">
             Update Employee
@@ -415,13 +415,13 @@ export default function EmployeeEdit() {
                     Image Upload
                   </label>
                   {formData.pic && (
-                    <a
+                    <Link
                       className="hover:underline text-blue-600"
-                      href={formData.pic}
+                      to={formData.pic}
                       target="_blank"
                     >
                       Preview Image
-                    </a>
+                    </Link>
                   )}
                 </div>
 

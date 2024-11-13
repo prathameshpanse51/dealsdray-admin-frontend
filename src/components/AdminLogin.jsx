@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function AdminLogin() {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     f_userName: "",
     f_Pwd: "",
@@ -50,7 +53,8 @@ export default function AdminLogin() {
         const result = await response.json();
         sessionStorage.setItem("admin", "success");
         sessionStorage.setItem("adminName", formData.f_userName);
-        window.location.pathname = "/admindashboard";
+        navigate("/admindashboard");
+        // window.location.pathname = "/admindashboard";
       } else if (response.status === 401) {
         const errorData = await response.json();
         incorrectMessage.innerHTML =

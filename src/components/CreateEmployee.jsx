@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { storage } from "./FirebaseConfig";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { Link } from "react-router-dom";
 
 export default function CreateEmployee() {
   if (sessionStorage.getItem("admin") !== "success") {
@@ -171,12 +172,12 @@ export default function CreateEmployee() {
       <div className="flex items-center min-h-screen p-4 bg-gray-100 justify-center">
         <div className="overflow-hidden w-[100vh] bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-sm">
           <p className="text-end mt-2">
-            <a
-              href="/admindashboard"
+            <Link
+              to="/admindashboard"
               className="mr-4 text-[#EE4B2B] font-semibold text-base"
             >
               Back
-            </a>
+            </Link>
           </p>
           <h1 className="text-2xl md:text-3xl font-semibold text-center">
             Create Employee
@@ -427,13 +428,13 @@ export default function CreateEmployee() {
                       <>
                         <div className="flex flex-col items-center justify-center pt-5 pb-6">
                           {formData.pic ? (
-                            <a
+                            <Link
                               className="hover:underline text-blue-600"
-                              href={formData.pic}
+                              to={formData.pic}
                               target="_blank"
                             >
                               Preview Image
-                            </a>
+                            </Link>
                           ) : (
                             <>
                               <svg
